@@ -1,11 +1,16 @@
 <template>
   <div>
     <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>...</li>
-      <li>Item N</li>
+      <TodoItem />
+      <TodoItem />
+      <TodoItem />
     </ul>
   </div>
 </template>
+
+<script>
+import TodoItem from "@/components/TodoItem";
+export default {
+  components: { TodoItem }
+}
+</script>
