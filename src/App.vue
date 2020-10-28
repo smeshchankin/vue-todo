@@ -13,7 +13,7 @@ export default {
       todos: [
         { id: 1, title: 'Buy butter', completed: false },
         { id: 2, title: 'Buy bread', completed: false },
-        { id: 3, title: 'Buy water', completed: true }
+        { id: 3, title: 'Buy water', completed: false }
       ]
     }
   },
