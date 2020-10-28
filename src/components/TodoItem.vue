@@ -8,7 +8,7 @@
         {{ todo.title }}
       </label>
     </span>
-    <button class="action-delete">&times;</button>
+    <button class="action-delete" v-on:click="$emit('remove-todo', todo.id)">&times;</button>
   </li>
 </template>
 
