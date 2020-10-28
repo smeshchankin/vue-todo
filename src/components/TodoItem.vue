@@ -1,6 +1,6 @@
 <template>
   <li class="item">
-    <span>
+    <span v-bind:class="{done: todo.completed}">
       <input :id="'item_' + todo.id" type="checkbox" class="action-check" />
       <label :for="'item_' + todo.id">
         <strong>{{ todo.id }}</strong>
