@@ -1,6 +1,6 @@
 <template>
   <h1 class="app-name">Todo Application</h1>
-  <AddItem />
+  <AddItem @add-todo="addTodo" />
   <hr />
   <TodoList v-bind:todos="todos" @remove-todo="removeTodo" />
 </template>
@@ -20,6 +20,10 @@ export default {
     }
   },
   methods: {
+    addTodo(item) {
+      const id = Math.max(0, ...this.todos.map(i => i.id)) + 1;
+      this.todos.push({ ...item, id: id });
+    },
     removeTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
     }
