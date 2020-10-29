@@ -1,11 +1,13 @@
 <template>
-  <h1>Todo Application</h1>
+  <h1 class="app-name">Todo Application</h1>
+  <AddItem />
   <hr />
   <TodoList v-bind:todos="todos" @remove-todo="removeTodo" />
 </template>
 
 <script>
 import TodoList from '@/components/TodoList'
+import AddItem from '@/components/AddItem'
 export default {
   name: 'App',
   data() {
@@ -23,7 +25,8 @@ export default {
     }
   },
   components: {
-    TodoList
+    TodoList,
+    AddItem
   }
 }
 </script>
@@ -31,8 +34,10 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.app-name {
+  text-align: center;
 }
 </style>
