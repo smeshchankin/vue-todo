@@ -1,6 +1,10 @@
 <template>
   <ul class="list">
-    <TodoItem v-for="todo in todos" v-bind:todo="todo" v-on:remove-todo="removeItem" />
+    <TodoItem v-for="(todo, idx) in todos"
+              v-bind:todo="todo"
+              v-bind:idx="idx"
+              v-on:remove-todo="removeItem"
+    />
   </ul>
 </template>
 

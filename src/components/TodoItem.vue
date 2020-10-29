@@ -4,7 +4,7 @@
       <input :id="'item_' + todo.id" type="checkbox" class="action-check"
              v-on:change="todo.completed = !todo.completed" />
       <label :for="'item_' + todo.id">
-        <strong>{{ todo.id }}</strong>
+        <strong>{{ idx + 1 }}</strong>
         {{ todo.title }}
       </label>
     </span>
@@ -18,7 +18,8 @@ export default {
     todo: {
       type: Object,
       required: true
-    }
+    },
+    idx: Number
   }
 }
 </script>
