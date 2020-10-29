@@ -2,10 +2,11 @@
   "name": "vue-todo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/smeshchankin/vue-todo",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "deploy": "node scripts/gh-pages-deploy.js"
+    "deploy": "node ./node_modules/vue-gh-pages/index.js --branch gh-pages"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0"
+    "@vue/compiler-sfc": "^3.0.0",
+    "vue-gh-pages": "^1.19.1"
   }
 }
