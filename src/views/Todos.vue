@@ -4,8 +4,9 @@
   <hr />
   <AddItem @add-todo="addTodo" />
   <hr />
+  <Loader v-if="loading" />
   <TodoList
-      v-if="todos.length"
+      v-else-if="todos.length"
       v-bind:todos="todos"
       @remove-todo="removeTodo"
   />
@@ -15,11 +16,14 @@
 <script>
 import TodoList from '@/components/TodoList'
 import AddItem from '@/components/AddItem'
+import Loader from '@/components/Loader'
+
 export default {
   name: 'Todos',
   data() {
     return {
-      todos: []
+      todos: [],
+      loading: true
     }
   },
   mounted() {
@@ -27,6 +31,7 @@ export default {
         .then(response => response.json())
         .then(json => {
           this.todos = json;
+          this.loading = false;
         });
   },
   methods: {
@@ -38,10 +43,7 @@ export default {
       this.todos = this.todos.filter(todo => todo.id !== id);
     }
   },
-  components: {
-    TodoList,
-    AddItem
-  }
+  components: { TodoList, AddItem, Loader }
 }
 </script>
 
