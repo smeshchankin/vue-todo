@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home';
 
 export default createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/vue-todo/'),
     routes: [
         {
             path: '/',
