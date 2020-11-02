@@ -4,7 +4,12 @@
   <hr />
   <AddItem @add-todo="addTodo" />
   <hr />
-  <TodoList v-bind:todos="todos" @remove-todo="removeTodo" />
+  <TodoList
+      v-if="todos.length"
+      v-bind:todos="todos"
+      @remove-todo="removeTodo"
+  />
+  <p v-else class="no-items">No items</p>
 </template>
 
 <script>
@@ -39,3 +44,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  .no-items {
+    color: indianred;
+    font-weight: 600;
+  }
+</style>
