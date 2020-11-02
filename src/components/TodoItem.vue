@@ -5,7 +5,7 @@
              v-on:change="todo.completed = !todo.completed" />
       <label :for="'item_' + todo.id">
         <strong>{{ idx + 1 }}</strong>
-        {{ todo.title }}
+        {{ titleUppercase }}
       </label>
     </span>
     <button class="action-delete" v-on:click="$emit('remove-todo', todo.id)">&times;</button>
@@ -20,6 +20,11 @@ export default {
       required: true
     },
     idx: Number
+  },
+  computed: {
+    titleUppercase() {
+      return this.todo.title.toUpperCase();
+    }
   }
 }
 </script>
