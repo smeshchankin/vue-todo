@@ -3,11 +3,17 @@
   <router-link to="/">Home</router-link>
   <hr />
   <AddItem @add-todo="addTodo" />
+  Filter:
+  <select v-model="filter" name="filter" id="filter">
+    <option value="null">All</option>
+    <option value="true">Completed</option>
+    <option value="false">Not Completed</option>
+  </select>
   <hr />
   <Loader v-if="loading" />
   <TodoList
-      v-else-if="todos.length"
-      v-bind:todos="todos"
+      v-else-if="filteredTodos.length"
+      v-bind:todos="filteredTodos"
       @remove-todo="removeTodo"
   />
   <p v-else class="no-items">No items</p>
@@ -23,7 +29,13 @@ export default {
   data() {
     return {
       todos: [],
-      loading: true
+      loading: true,
+      filter: 'null'
+    }
+  },
+  computed: {
+    filteredTodos() {
+      return this.todos.filter(t => this.filter === 'null' || t.completed.toString() === this.filter);
     }
   },
   mounted() {
