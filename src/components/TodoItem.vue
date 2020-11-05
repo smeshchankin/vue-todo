@@ -40,6 +40,7 @@ export default {
 
   .action-check {
     margin-right: 1rem;
+    display: none;
   }
   .action-delete {
     width: 2rem;

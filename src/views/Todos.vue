@@ -3,12 +3,14 @@
   <router-link to="/">Home</router-link>
   <hr />
   <AddItem @add-todo="addTodo" />
-  Filter:
-  <select v-model="filter" name="filter" id="filter">
-    <option value="null">All</option>
-    <option value="true">Completed</option>
-    <option value="false">Not Completed</option>
-  </select>
+  <div class="todos-filter">
+    <label class="todos-filter-label">Filter:</label>
+    <select v-model="filter" name="filter" id="filter">
+      <option value="null">All</option>
+      <option value="true">Completed</option>
+      <option value="false">Not Completed</option>
+    </select>
+  </div>
   <hr />
   <Loader v-if="loading" />
   <TodoList
@@ -63,5 +65,11 @@ export default {
   .no-items {
     color: indianred;
     font-weight: 600;
+  }
+  .todos-filter {
+    margin: 10px 0;
+  }
+  .todos-filter-label {
+    margin-right: 10px;
   }
 </style>
