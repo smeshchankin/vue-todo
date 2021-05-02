@@ -5,4 +5,8 @@ ToDo list on Vue 3 deployed as GitHub pages
 
 Project Technologies:
 * Vue 3
+* Vue router
+* vue-gh-pages - Vue GitHub Pages
 * Babel
+
+For build GitHub Pages: npm run deploy
